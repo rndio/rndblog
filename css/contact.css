@@ -1,0 +1,22 @@
+#awn-toast-container .awn-toast-icon>i {
+  font-size: 48px;
+  margin-right: 16px
+}
+
+body:has(#c-backdrop.active) {
+  overflow: hidden
+}
+
+#c-backdrop {
+  z-index: 1040;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .8);
+  opacity: 0;
+  transition: opacity .15s linear;
+  pointer-events: none
+}
+
+#c-backdrop.active {
+  opacity: 1;
+  pointer-events: unset
+}
