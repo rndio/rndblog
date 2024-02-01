@@ -1,0 +1,54 @@
+  .project-card a.link {
+    display: block;
+    color: var(--bs-dark);
+    text-decoration: none;
+    transform: translateY(0);
+  }
+
+  .project-card a.link:hover {
+    color: var(--bs-gray-600);
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+  }
+
+  .project-card .card-header {
+    height: 220px;
+    position: relative;
+    --bs-card-cap-padding-y: 0;
+    --bs-card-cap-padding-x: 0;
+    overflow: hidden;
+  }
+
+  .project-card.featured .card-header::before {
+    content: '\2B50';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25rem 0.5rem;
+    backdrop-filter: blur(2px) brightness(0.8) grayscale(1);
+    border-radius: 12px;
+    height: 2rem;
+    width: 2rem;
+    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-card .card-header img.card-img-top {
+    height: inherit;
+    object-fit: cover;
+    object-position: top;
+    transition: object-position 2s ease-in-out;
+  }
+
+  .project-card img.card-img-top:hover {
+    object-position: bottom;
+  }
+
+  .project-card .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1;
+  }
