@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById('projects');
   const projectAPI = 'https://api.rndio.my.id/project';
