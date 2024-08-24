@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const followingJson = document.getElementById('following-json').files[0];
 
     let followers = [];
+    let following = [];
     let unfollowers = [];
 
     const followersReader = new FileReader();
@@ -108,7 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
     followingReader.onload = function () {
       const data = JSON.parse(followingReader.result);
       following = parsingFollowing(data);
+    }
 
+    followersReader.onloadend = followingReader.onloadend = function () {
       unfollowers = checkUnfollowers(followers, following);
       countUnfollowers.textContent = `(${unfollowers.length})`;
       resultUnfollowers.innerHTML = '';
@@ -122,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
       followers.forEach(follower => {
         resultFollowers.appendChild(createElement(follower));
       });
-    }
+    };
 
     modalResult.show();
   });
