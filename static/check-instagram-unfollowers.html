@@ -1,0 +1,108 @@
+<div>
+  <p class="text-center fw-semibold">Check who unfollowed you on Instagram by uploading a json of your followers and followings list.</p>
+  <div class="text-center mb-4">
+    <button id="check-ig-unfollowers-btn" class="btn btn-outline-dark rounded-0 px-3" data-bs-toggle="modal" data-bs-target="#modalTutorial">
+      <i class="ri-information-2-line"></i>
+      <span>Tutorial</span>
+    </button>
+  </div>
+  <form id="check-ig-unfollowers" class="row g-4">
+    <div class="col-12 col-md-6">
+      <div>
+        <h5>
+          <i class="ri-team-line"></i>
+          <span class="fw-semibold">Followers</span>
+        </h5>
+        <label for="followers-json" class="form-label small">Upload all files named followers_*.json from yout instagram data.</label>
+        <input type="file" name="followers-json" id="followers-json" class="form-control rounded-1" accept=".json" required>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div>
+        <h5>
+          <i class="ri-user-follow-line"></i>
+          <span class="fw-semibold">Following</span>
+        </h5>
+        <label for="followings-json" class="form-label small">Upload file named following.json from your instagram data.</label>
+        <input type="file" name="following-json" id="following-json" class="form-control rounded-1" accept=".json" required>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-outline-primary w-100 rounded-1">
+        <i class="ri-user-unfollow-line"></i>
+        <span class="fw-semibold">Check Unfollowers</span>
+      </button>
+    </div>
+  </form>
+  <h5 class="text-center text-danger text-uppercase fw-bold mt-5">All process is done on the client side, we don't collect your data.</h5>
+</div>
+
+<div class="modal fade" id="modalTutorial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content rounded">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="ri-information-2-line"></i>
+          <span class="fw-semibold">Tutorial</span>
+        </h5>
+        <button type="button" class="btn-close small" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4">
+          <div class="col-12">
+            <h5 class="fw-semibold text-center mb-3">How to get your followers and followings list?</h5>
+            <ol>
+              <li>Access to your personal Instagram account</li>
+              <li>Select the three line icon at the top right corner > Settings and activity</li>
+              <li>Go to Accounts Center > Your Information and permissions > Download your information > Download or transfer information > Select Instagram Profile > Some of your information > Check on Followers and following > Download to device > Select Date range (All time) > Select Format (JSON) > Create files. <a href="https://help.instagram.com/181231772500920" target="_blank">See More Information Here!</a></li>
+              <li>Wait for the email from Instagram with the link to download your data</li>
+              <li>Download the file and upload it to this app. Extract the .ZIP in a save location on your computer.</li>
+              <li>Open the folder and look for the file "followers.json" and "following.json" on the folder "followers_and_following".</li>
+              <li>Upload the file "following.json" and "follower_1.json" to this app.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content rounded">
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">
+          <i class="ri-user-unfollow-line"></i>
+          <span>Result</span>
+        </h5>
+        <button type="button" class="btn-close small" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-lg-6">
+            <h5 class="text-center mb-4">
+              <i class="ri-user-unfollow-line"></i>
+              <span class="fw-semibold small">Not Following Back <small id="count-unfollowers"></small></span>
+            </h5>
+            <div id="result-unfollowers" class="row border border-1 p-2"></div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <h5 class="text-center mb-4">
+              <i class="ri-user-follow-line"></i>
+              <span class="fw-semibold small">Following you but u don't Following Back <small id="count-followers"></small></span>
+            </h5>
+            <div id="result-followers" class="row border border-1 p-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #result-followers,#result-following,#result-unfollowers {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+</style>
+<script src="js/check-instagram-unfollowers.js"></script>

@@ -1,0 +1,45 @@
+<link href="https://cdn.jsdelivr.net/gh/rndio/rndblog@685ff7b/css/contact.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/awesome-notifications@3.1.3/dist/style.css" rel="stylesheet"/>
+
+<div class="text-center"><img alt="Contact" class="img-fluid" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBNnCjmm9tx7NAQ4KI1lx9qJ4OCMlfUHi3N0FoJn4QaXso1npJrHcsnh5e8g7iDm3Y9hePwxJxUGYCD5pfdQzULSyHXhTwI2rfdJdaRT2ob8Xf94yQSJ8TVTw6YC-bckk0NO_VC9yJTlk/s0/contact.webp" /></div>
+<p class="my-3">Hi &#128075;, <br />
+  <span class="d-none">Do you have a story or experience you'd like to share? I'm very excited to hear it. Please leave a message :D</span>
+  <span>Check "Send as Anonymous" if you don't want to share your identity</span>
+</p>
+
+<form action="." class="row g-2 my-3" id="c-form" method="POST">
+  <div class="col-12 col-md-6">
+    <div class="form-floating">
+      <input autofocus class="form-control rounded-0" id="c-name" name="name" pattern="[a-zA-Z ]{2,}" required type="text">
+      <label for="c-name">Name</label>
+    </div>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="form-floating">
+      <input class="form-control rounded-0" id="c-email" name="email" required type="email" />
+      <label for="c-email">Email</label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-floating">
+      <textarea class="form-control rounded-0" id="c-message" name="message" required style="min-height: 120px;"></textarea>
+      <label for="c-message">Message</label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mt-3">
+      <div class="form-check">
+        <input class="form-check-input rounded-0" id="c-achkbox" type="checkbox" />
+        <label for="c-achkbox" class="form-check-label small">Send as Anonymous</label>
+      </div>
+      <button class="btn btn-primary rounded-0 small" type="submit">Send Message<i class="ri-send-plane-2-fill ms-2"></i></button>
+    </div>
+  </div>
+</form>
+
+<div aria-hidden="true" class="d-flex align-items-center justify-content-center vh-100 vw-100 top-0 start-0" id="c-backdrop">
+  <div aria-label="Loading..." class="spinner-border text-light" role="status" style="height: 3rem; width: 3rem;"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/awesome-notifications@3.1.3/dist/index.var.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rndio/rndblog@685ff7b/js/contact.min.js"></script>
